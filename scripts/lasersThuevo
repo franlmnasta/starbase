@@ -1,0 +1,43 @@
+n="\n" itr=0 fs=0 IF :sense<1 THEN est=0 tt=30 :Dore="OFF" GOTO1 END
+:Chk=1 IF :lsa>=1 THEN :Dore="(A)"+n tt-=1 GOTO3 END :Dore="(M)"+n
+IF itr<:rslt THEN :idx=itr :Dore+=:mat+n itr+=1 Est=1 GOTO4 END GOTO5
+:Dore+=:Vol+n tt=30 fs=3 cs=15 :CL=1 GOTO3 
+IF :rslt<1 THEN :Dore+="Looking.." END IF TT<10 THEN :Dore+=tt END
+IF :lsa>0 THEN  tt-=1 cs-=1 GOTO7 END tt=30 GOTO10
+fs-=1 cs-=1 IF fs<1 THEN :LM=0 END IF cs<1 THEN :Cl=0 END 
+IF tt<1 THEN :sense=0 :CL=0 GOTO1 END 
+IF :rslt<1 THEN :LM=0 GOTO1 END IF :LM1>0 THEN GOTO18 END :LM=1
+IF :LM1=1 THEN :LM=0 GOTO18 END GOTO1
+IF NOT :LM1 THEN GOTO1 END sh=17 CL=1 GOTO19
+IF sh>1 THEN :LM=1 :CL=1 sh-=1 GOTO20 END GOTO1 
+IF sh<1 THEN :ss=fs GOTO1 END :LM=0 GOTO19
+
+//Variables
+//fs = boleana encendido de lasers
+//ls= timeout apagado de Laser sin deteccion de ores
+//tt= timeout apagado de scaner sin deteccion
+//tt= timeout apagado de colector  sin deteccion
+//Modo automatico
+//AutoLaser on/off
+//AutoColector on/off
+//AutoScaner off 30s
+//Disparo rafagas  Objeto :LM1
+//Disparo Continuo Objeto :LM
+
+//Modo Manual
+// Disparo rafagas  Objeto :LM1
+// Disparo Continuo Objeto :LM
+
+//Objeto  = Dore  textpanel
+//Objeto = :lsa (automatico)  boton
+//Objeto = :lm1: Rafaga  on/off boton
+//Objeto   :lm    Continuo On/off  boton y lasers
+//Objeto  : cl:    Colector on/off   boton y colector
+//Objeto :sense scaner on/off   boton y scaner
+//Objeto Colector varibles = CL
+//Objeto Scaner =      sense
+ //              Idx
+ //                        rslt
+ //              mat
+ //             vol
+ //                                    Chk
